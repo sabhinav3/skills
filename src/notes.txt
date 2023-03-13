@@ -1,0 +1,76 @@
+MyskillsPage:{
+
+    myskills = [
+        {
+            skill:{
+                id: 1
+                name: "",
+                expertStatus
+            },
+            assessments:{
+                icon,
+                level,
+                proficiency,
+                assessmentCount
+            },
+            selfAssessment:{
+                years,
+                level,
+                proficiency,
+                isDone
+            }
+        },
+        {skill:{
+                name,
+                expertStatus
+            },
+            assessments:{
+                icon,
+                level,
+                proficiency,
+                assessmentCount
+            },
+            selfAssessment:{
+                years,
+                level,
+                proficiency,
+                isDone
+            }},
+        {},
+        {}
+    ]
+
+    myskills.map(item => <SkillRow skill=item.skill assessments=item.>)
+
+
+    ListOfSkills:{
+            HeaderRow,
+            SkillRows:[
+                SkillRow1:{
+                    Skill:{
+                        Name,
+                        expertStatus:Enum[none, pending, approved],
+                    },
+                    Assessments:{
+                        icon,
+                        level,
+                        proficiency,
+                        assessmentCount
+                    },
+                    SelfAssessment:{
+                        years,
+                        level,
+                        proficiency,
+                        isDone
+                    }
+
+                },
+                SkillRow2:{
+
+                },
+                SkillRown:{
+
+                }
+            ]
+    }
+}
