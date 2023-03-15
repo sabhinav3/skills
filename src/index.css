@@ -14,7 +14,7 @@ code {
 
 .navbar {
   display: inline;
-  font-size: 10px;
+  font-size: 20px;
   display: inline;
   text-decoration: none;
   color: #000000;
@@ -55,6 +55,10 @@ code {
   justify-content: space-between;
   color: #808080;
   box-sizing: border-box;
+}
+
+.details {
+  display: inline-flex;
 }
 
 .details p {

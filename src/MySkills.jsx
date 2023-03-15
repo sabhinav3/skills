@@ -24,18 +24,6 @@ export const Skills = (props) => {
         {/* <ManageSkills /> */}
         <SkillForm />
       </div>
-
-      {/* <div>
-        <Routes>
-          <Route
-            path="/src/components/TempSkillsDet.jsx"
-            element={<TempDetails />}
-          ></Route>
-          <Route path="/src/components/ManageSkills.jsx">
-            <ManageSkills />
-          </Route>
-        </Routes>
-      </div> */}
     </>
   );
 };
