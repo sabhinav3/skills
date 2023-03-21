@@ -526,3 +526,8 @@ button {
   display: flex;
   flex-direction: row;
 }
+
+.SkillInputTextField {
+  display: flex;
+  flex-direction: row;
+}

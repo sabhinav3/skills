@@ -16,8 +16,12 @@ const marks = [
 
 export const SliderValue = (props) => {
   const sliderValue = (e) => {
-    props.onLevelSelect(e.target.proficiencyValue);
+    props.onSliderValueSelect(e.target.id);
   };
+
+  // props.onSlidersValueSelect(e.target.proficiencyValue);
+
+  const index = props.index;
 
   const [proficiencyValue, setProficiencyValue] = useState(50);
 
@@ -26,6 +30,7 @@ export const SliderValue = (props) => {
       <div>
         <Box sx={{ width: 300 }}>
           <Slider
+            id="index"
             color="#808080"
             className="slider"
             defaultValue={50}
@@ -35,6 +40,7 @@ export const SliderValue = (props) => {
             onChangeCommitted={(_, v) => setProficiencyValue(v)}
           />
           <TextField
+            id="index"
             className="sliderValue"
             label="Proficiency Value"
             value={proficiencyValue}

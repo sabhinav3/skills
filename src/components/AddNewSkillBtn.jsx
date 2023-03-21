@@ -36,3 +36,5 @@ export const AddButton = (props) => {
     </div>
   );
 };
+
+// for this button., we need to add an onclick event then., we need to render new component

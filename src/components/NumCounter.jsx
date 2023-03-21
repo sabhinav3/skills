@@ -1,7 +1,13 @@
 import { useState } from "react";
 
-function NumCounter() {
+function NumCounter(props) {
   let [num, setNum] = useState(0);
+
+  const experienceValue = (e) => {
+    props.onExperienceValueSelect(e.target.id);
+  };
+  const index = props.index;
+
   let incNum = () => {
     if (num < 10) {
       setNum(Number(num) + 1);
