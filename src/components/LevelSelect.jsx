@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Level } from "./Level";
 
 export const LevelSelect = (props) => {

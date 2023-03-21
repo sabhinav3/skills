@@ -55,20 +55,7 @@ export const Details = (props) => {
           </CompInside>
         </div>
       </Comp2>
-      {/* <div className="details">
-        <p>
-          <b>Javascript</b>
-        </p>
-        <img src={verified} className="imageVerified" alt="verified" />
-        <div className="assessments">
-          <img src={frame15} className="imageAssessment" alt="profiency %" />
-          <div>
-            <b>Master</b> Level with <b>30%</b> profiency,
-            <br />
-            <p>10 Assessments</p>
-          </div>
-        </div>
-      </div> */}
+
       <div className="details">
         <p>
           <b>Frontend Development</b>

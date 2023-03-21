@@ -1,26 +1,3 @@
-// import React, { useState } from "react";
-
-// function Counter() {
-//   const [count, setCount] = useState(0);
-
-//   function decrement() {
-//     setCount((prevCount) => prevCount - 1);
-//   }
-//   function increment() {
-//     setCount((prevCount) => prevCount + 1);
-//   }
-
-//   return (
-//     <>
-//       <button onClick={decrement}>-</button>
-//       <span>count</span>
-//       <button onClick={increment}>+</button>
-//     </>
-//   );
-// }
-
-// export default Counter;
-
 import { useState } from "react";
 
 function NumCounter() {
@@ -76,3 +53,26 @@ function NumCounter() {
 }
 
 export default NumCounter;
+
+// import React, { useState } from "react";
+
+// function Counter() {
+//   const [count, setCount] = useState(0);
+
+//   function decrement() {
+//     setCount((prevCount) => prevCount - 1);
+//   }
+//   function increment() {
+//     setCount((prevCount) => prevCount + 1);
+//   }
+
+//   return (
+//     <>
+//       <button onClick={decrement}>-</button>
+//       <span>count</span>
+//       <button onClick={increment}>+</button>
+//     </>
+//   );
+// }
+
+// export default Counter;

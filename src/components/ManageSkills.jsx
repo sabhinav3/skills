@@ -65,7 +65,12 @@ const selected = 0;
 function imageClick(e) {
   console.log("click");
   const image = { full2 };
-  <img src={full1} className="levelIcons" value="1" alt="1st_level_full" />;
+  <img
+    src={full1}
+    className="LevelSelectIcons"
+    value="1"
+    alt="1st_level_full"
+  />;
 }
 
 const skillIcon = ({ success }) => {
@@ -106,7 +111,6 @@ export const ManageSkills = (props) => {
             </div>
 
             <div className="levelFind">
-              {/* <LevelSelect></LevelSelect> */}
               <LevelSelect
                 selectedLevel={selectedLevel}
                 onLevelSelect={(level) => setSelectedLevel(level)}

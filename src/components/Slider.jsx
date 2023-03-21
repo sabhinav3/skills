@@ -15,6 +15,10 @@ const marks = [
 ];
 
 export const SliderValue = (props) => {
+  const sliderValue = (e) => {
+    props.onLevelSelect(e.target.proficiencyValue);
+  };
+
   const [proficiencyValue, setProficiencyValue] = useState(50);
 
   return (
