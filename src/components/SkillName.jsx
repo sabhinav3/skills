@@ -1,5 +1,4 @@
 import React from "react";
-import remove from "/Users/sabhinav/nearbuzz/skills/src/images/remove.png";
 import verified from "/Users/sabhinav/nearbuzz/skills/src/images/verified.png";
 import pending from "/Users/sabhinav/nearbuzz/skills/src/images/pending.png";
 

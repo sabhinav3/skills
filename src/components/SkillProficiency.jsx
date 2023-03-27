@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Slider from "@material-ui/core/Slider";
 import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+// import TextField from "@mui/material/TextField";
 
 const marks = [
   {
