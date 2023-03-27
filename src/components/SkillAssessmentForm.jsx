@@ -21,9 +21,9 @@ export const SkillAssessmentForm = (skill) => {
     {
       id: skill?.id,
       skillName: skill.skillName,
+      level: skill.level,
       isExpertSkill: skill.isExpertSkill,
       isMarkedExpert: skill.isMarkedExpert,
-      level: skill.level,
       proficiency: skill.proficiency,
       experience: skill.experience,
     },
@@ -66,10 +66,18 @@ export const SkillAssessmentForm = (skill) => {
                     <ExpertSkillCheckBox isExpertSkill={skill.isExpertSkill} />
                   </div>
                 </Col>
+
+                {/*The component to select the level of the skill is below*/}
+                <Col>
+                  <div className="marginSkillAssessmentDetails">
+                    <SkillLevelSelect level={skill.level} />
+                  </div>
+                </Col>
+
                 {/* Slider input  */}
+
                 <Col>
                   <div
-                    key={skill.id}
                     className="marginSkillAssessmentDetails"
                     autoComplete="off"
                   >

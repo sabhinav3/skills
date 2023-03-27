@@ -6,7 +6,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import { LevelSelect } from "./components/SkillLevelSelect";
 import { useState } from "react";
 
-function App() {
+function App(props) {
   const defaultSkills = [
     {
       id: 1,
@@ -34,7 +34,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<TempDetails mySkills={mySkills} />} />
+          <Route path="/" element={<TempDetails mySkills={props.mySkills} />} />
           <Route
             path="/manageSkills"
             element={<ManageSkills onSkillsChange={setMySkills} />}
