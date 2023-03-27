@@ -27,7 +27,7 @@ export const SliderValue = (props) => {
             aria-label="Custom marks"
             valueLabelDisplay="on"
             marks={marks}
-            onChangeCommitted={(_, v) => props.onChange(v)}
+            onChangeCommitted={(_, v) => props.onChange()}
           />
         </Box>
       </div>

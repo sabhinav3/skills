@@ -1,4 +1,3 @@
-import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
 import { SliderValue } from "./SkillProficiency";
@@ -7,25 +6,25 @@ import { Col } from "react-bootstrap";
 import SkillExperience from "./SkillExperience";
 import AddSkillsForm from "./AddSkillsForm";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
-import { CheckBox } from "@material-ui/icons";
-import { ExpertSkillCheckBox } from "./MarkExpertSkill";
+import { MarkExpertSkill } from "./MarkExpertSkill";
+import { SkillLevelSelect } from "./SkillLevelSelect";
 
-export const SkillAssessmentForm = (skill) => {
+export default function SkillAssessmentForm(skill) {
   const [sliderLevel, setSliderLevel] = useState(10);
 
   // const [addSkills, setAddSkills] = useState(<SkillAssessmentForm />);
 
   const [experienceLevel, setExperienceLevel] = useState(1);
 
-  const [skill, setSkill] = useState([
+  const [mySkill, setMySkill] = useState([
     {
-      id: skill?.id,
-      skillName: skill.skillName,
-      level: skill.level,
-      isExpertSkill: skill.isExpertSkill,
-      isMarkedExpert: skill.isMarkedExpert,
-      proficiency: skill.proficiency,
-      experience: skill.experience,
+      id: mySkill?.id,
+      skillName: mySkill.skillName,
+      level: mySkill.level,
+      isExpertSkill: mySkill.isExpertSkill,
+      isMarkedExpert: mySkill.isMarkedExpert,
+      proficiency: mySkill.proficiency,
+      experience: mySkill.experience,
     },
   ]);
 
@@ -33,14 +32,14 @@ export const SkillAssessmentForm = (skill) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("inputSkills", skillName);
+    console.log("inputSkills", mySkill.skillName);
   };
 
   const handleChangeInput = (index, event) => {
     console.log(index, event.target.name);
-    const values = [...skillName];
+    const values = [...mySkill.skillName];
     values[index][event.target.name] = event.target.value;
-    setSkillName(values);
+    setMySkill(values);
   };
 
   const displaySkillAssessmentForm = () => {
@@ -59,22 +58,28 @@ export const SkillAssessmentForm = (skill) => {
                 {/* input of the skill name */}
 
                 <Col>
-                  <div key={skill.id} className="marginSkillAssessmentDetails">
-                    {skill.skillName}
+                  <div
+                    key={mySkill.id}
+                    className="marginSkillAssessmentDetails"
+                  >
+                    {mySkill.skillName}
                   </div>
+
+                  {/*To check whether the skill is expert or not (checkbox)*/}
+
                   <div>
-                    <ExpertSkillCheckBox isExpertSkill={skill.isExpertSkill} />
+                    <MarkExpertSkill isExpertSkill={mySkill.isExpertSkill} />
                   </div>
                 </Col>
 
                 {/*The component to select the level of the skill is below*/}
                 <Col>
                   <div className="marginSkillAssessmentDetails">
-                    <SkillLevelSelect level={skill.level} />
+                    <SkillLevelSelect level={mySkill.level} />
                   </div>
                 </Col>
 
-                {/* Slider input  */}
+                {/* Proficiency input : Slider */}
 
                 <Col>
                   <div
@@ -82,8 +87,8 @@ export const SkillAssessmentForm = (skill) => {
                     autoComplete="off"
                   >
                     <SliderValue
-                      proficiency={skill.proficiency}
-                      id={skill.id}
+                      proficiency={mySkill.proficiency}
+                      id={mySkill.id}
                       onChange={setSliderLevel}
                     />
                   </div>
@@ -92,8 +97,8 @@ export const SkillAssessmentForm = (skill) => {
                 <Col>
                   <div className="marginSkillAssessmentDetails">
                     <SkillExperience
-                      experienceLevel={index}
-                      experienceInput={skill.experienceInput}
+                      experienceLevel={mySkill.index}
+                      experienceInput={mySkill.experienceInput}
                       onExperienceValueSelct={(e) => setExperienceLevel(e)}
                     />
                   </div>
@@ -106,4 +111,4 @@ export const SkillAssessmentForm = (skill) => {
       </div>
     </Container>
   );
-};
+}

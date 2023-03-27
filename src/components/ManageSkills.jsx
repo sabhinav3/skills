@@ -9,17 +9,13 @@ import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import "@fontsource/roboto";
 import question from "/Users/sabhinav/nearbuzz/skills/src/images/question.png";
 import SkillExperience from "./SkillExperience";
-import { SearchBar } from "./AddSkills";
+import { MarkExpertSkilll } from "./MarkExpertSkill";
+import { AddSkills } from "./AddSkills";
 import { AddButton } from "./AddNewSkillBtn";
 import { SkillName } from "./SkillName";
 import { Link } from "react-router-dom";
 import { SliderValue } from "./SkillProficiency";
-import { LevelSelect } from "./SkillLevelSelect";
-
-const Comp1 = styled.div`
-  margin-left: 0px;
-  display: inline-flex;
-`;
+import { SkillLevelSelect } from "./SkillLevelSelect";
 
 export const ManageSkills = (props) => {
   const [selectedLevel, setSelectedLevel] = useState(1);
@@ -39,7 +35,7 @@ export const ManageSkills = (props) => {
           <p>Assess yourself in the skills you have selected.</p>
         </div>
         <div className="searchBar">
-          <SearchBar />
+          <AddSkills />
           <AddButton />
         </div>
 
@@ -55,7 +51,7 @@ export const ManageSkills = (props) => {
             </div>
 
             <div className="levelFind">
-              <LevelSelect
+              <SkillLevelSelect
                 selectedLevel={selectedLevel}
                 onLevelSelect={(level) => setSelectedLevel(level)}
               />

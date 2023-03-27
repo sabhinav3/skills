@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import Container from "@mui/material/Container";
-import TextField from "@mui/material/TextField";
 import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import RemoveIcon from "@mui/icons-material/RemoveCircleOutlineRounded";
-import AddIcon from "@mui/icons-material/AddCircleOutlineRounded";
 import SendIcon from "@mui/icons-material/SendRounded";
 import SkillAssessmentForm from "./SkillAssessmentForm";
 import AddSkillsForm from "./AddSkillsForm";
@@ -44,8 +42,8 @@ function ManageSkillForm() {
     console.log("inputSkills", inputSkills);
   };
 
-  const handleAddSkills = (skill) => {
-    setInputSkills([...inputSkills, skill]);
+  const handleAddSkills = (skillSet) => {
+    setInputSkills([...inputSkills, skillSet]);
   };
 
   const handleRemoveSkill = (id) => {
@@ -59,13 +57,13 @@ function ManageSkillForm() {
       <h1>Add new Skill here</h1>
       <form onSubmit={handleSubmit} autoComplete="off">
         <AddSkillsForm />
-        {inputSkills.map((skill) => (
+        {inputSkills.map((skillSet) => (
           <div>
-            {/* <SkillAssessmentForm skill={skill} /> */}
-            <IconButton onClick={handleRemoveSkill(skill.id)}>
+            <SkillAssessmentForm skill={skillSet} />
+            <IconButton onClick={handleRemoveSkill(skillSet.id)}>
               <RemoveIcon />
             </IconButton>
-            <SkillAssessmentForm skill={skill} />
+            <SkillAssessmentForm skill={skillSet} />
           </div>
         ))}
 

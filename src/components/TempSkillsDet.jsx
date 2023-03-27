@@ -18,7 +18,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import { SkillCheckBox } from "./MarkExpertSkill";
+import { MarkExpertSkill } from "./MarkExpertSkill";
 import { ManageSkills } from "./ManageSkills";
 import { Details } from "./SkillDetails";
 
@@ -68,7 +68,7 @@ export const TempDetails = (props) => {
                 <img src={verified} className="imageVerified" alt="verified" />
               </div>
               <div>
-                <SkillCheckBox />
+                <MarkExpertSkill />
               </div>
             </Comp1>
           </Col>
