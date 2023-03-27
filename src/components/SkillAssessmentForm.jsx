@@ -1,35 +1,31 @@
 import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import { Slider, SliderValue } from "./Slider";
-import NumCounter from "./NumCounter";
+import { SliderValue } from "./SkillProficiency";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
+import SkillExperience from "./SkillExperience";
+import AddSkillsForm from "./AddSkillsForm";
+import "/Users/sabhinav/nearbuzz/skills/src/index.css";
+import { CheckBox } from "@material-ui/icons";
+import { ExpertSkillCheckBox } from "./MarkExpertSkill";
 
-function SkillAssessmentForm() {
-  //   const [inputSkills, setInputSkills] = useState([
-  //     {
-  //       id: 0,
-  //       skillName: "",
-  //       isExpertSkill: false,
-  //       level: "beginner",
-  //       proficiency: 0,
-  //       experience: 0,
-  //     },
-  //   ]);
-
+export const SkillAssessmentForm = (skill) => {
   const [sliderLevel, setSliderLevel] = useState(10);
+
+  // const [addSkills, setAddSkills] = useState(<SkillAssessmentForm />);
 
   const [experienceLevel, setExperienceLevel] = useState(1);
 
-  const [skillName, setSkillName] = useState([
+  const [skill, setSkill] = useState([
     {
-      id: "",
-      inputSkillField: "",
-      isExpertSkill: "",
-      level: "",
-      proficiencyInput: "",
-      experienceInput: "",
+      id: skill?.id,
+      skillName: skill.skillName,
+      isExpertSkill: skill.isExpertSkill,
+      isMarkedExpert: skill.isMarkedExpert,
+      level: skill.level,
+      proficiency: skill.proficiency,
+      experience: skill.experience,
     },
   ]);
 
@@ -46,59 +42,60 @@ function SkillAssessmentForm() {
     values[index][event.target.name] = event.target.value;
     setSkillName(values);
   };
+
+  const displaySkillAssessmentForm = () => {
+    this.setState({
+      displaySkillAssessmentForm: !this.state.displaySkillAssessmentForm,
+    });
+  };
+
   return (
     <Container>
       <div className="SkillInputTextField">
         <Row>
           <form className="" onSubmit={handleSubmit} autoComplete="off">
-            {skillName.map((skill, index) => (
+            {skill && (
               <div>
                 {/* input of the skill name */}
+
                 <Col>
-                  <div key={index} className="marginSkillAssessmentDetails">
-                    <TextField
-                      name="inputSkillField"
-                      label="Enter the Skill"
-                      varient="filled"
-                      value={skill.inputSkillField}
-                      onChange={(event) => handleChangeInput(index, event)}
-                    />
+                  <div key={skill.id} className="marginSkillAssessmentDetails">
+                    {skill.skillName}
+                  </div>
+                  <div>
+                    <ExpertSkillCheckBox isExpertSkill={skill.isExpertSkill} />
                   </div>
                 </Col>
                 {/* Slider input  */}
                 <Col>
                   <div
-                    key={index}
+                    key={skill.id}
                     className="marginSkillAssessmentDetails"
                     autoComplete="off"
                   >
                     <SliderValue
-                      sliderLevel={index}
-                      onSliderValueSelect={(e) => setSliderLevel(e)}
+                      proficiency={skill.proficiency}
+                      id={skill.id}
+                      onChange={setSliderLevel}
                     />
                   </div>
                 </Col>
                 {/* input of the counter for the years of experience */}
                 <Col>
-                  <div
-                    key={index}
-                    className="marginSkillAssessmentDetails"
-                    autoComplete="off"
-                  >
-                    <NumCounter
+                  <div className="marginSkillAssessmentDetails">
+                    <SkillExperience
                       experienceLevel={index}
+                      experienceInput={skill.experienceInput}
                       onExperienceValueSelct={(e) => setExperienceLevel(e)}
                     />
-                    {/* <NumCounter experienceValue={() => setNum()} /> */}
                   </div>
                 </Col>
               </div>
-            ))}
+            )}
           </form>
+          <AddSkillsForm />
         </Row>
       </div>
     </Container>
   );
-}
-
-export default SkillAssessmentForm;
+};

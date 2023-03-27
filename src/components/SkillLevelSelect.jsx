@@ -1,7 +1,7 @@
 import React from "react";
 import { Level } from "./Level";
 
-export const LevelSelect = (props) => {
+export const SkillLevelSelect = (props) => {
   const toggleSelect = (e) => {
     props.onLevelSelect(e.target.id);
   };

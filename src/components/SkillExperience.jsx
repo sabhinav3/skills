@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function NumCounter(props) {
+function SkillExperience(props) {
   let [num, setNum] = useState(0);
 
   const experienceValue = (e) => {
@@ -26,7 +26,7 @@ function NumCounter(props) {
     <>
       <div className="selectExperience">Years of Experience</div>
 
-      <div className="col-xl-3">
+      <div className="experienceCounter">
         <div class="input-group">
           <div class="input-group-prepend">
             <button
@@ -38,10 +38,12 @@ function NumCounter(props) {
             </button>
           </div>
           <input
+            className="inputExperienceCounter"
             type="text"
             class="form-control"
             value={num}
             onChange={handleChange}
+            disabled
           />
           <div class="input-group-prepend">
             <button
@@ -58,27 +60,4 @@ function NumCounter(props) {
   );
 }
 
-export default NumCounter;
-
-// import React, { useState } from "react";
-
-// function Counter() {
-//   const [count, setCount] = useState(0);
-
-//   function decrement() {
-//     setCount((prevCount) => prevCount - 1);
-//   }
-//   function increment() {
-//     setCount((prevCount) => prevCount + 1);
-//   }
-
-//   return (
-//     <>
-//       <button onClick={decrement}>-</button>
-//       <span>count</span>
-//       <button onClick={increment}>+</button>
-//     </>
-//   );
-// }
-
-// export default Counter;
+export default SkillExperience;

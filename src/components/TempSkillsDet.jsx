@@ -4,9 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import { Routes, Route, useNavigate } from "react-router-dom";
-import link, { Link } from "react-router-dom";
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
 import "@fontsource/roboto";
 import verified from "/Users/sabhinav/nearbuzz/skills/src/images/verified.png";
@@ -20,6 +18,7 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import { SkillCheckBox } from "./MarkExpertSkill";
 import { ManageSkills } from "./ManageSkills";
 import { Details } from "./SkillDetails";
 
@@ -45,12 +44,6 @@ const CompInside = styled.div`
 `;
 
 export const TempDetails = (props) => {
-  const navigate = useNavigate();
-
-  // const manageSkills = (e) => {
-  //   navigate("/manageSkills");
-  // };
-
   return (
     <>
       <Container>
@@ -71,7 +64,11 @@ export const TempDetails = (props) => {
                 <p>
                   <b>Javascript</b>
                 </p>
+
                 <img src={verified} className="imageVerified" alt="verified" />
+              </div>
+              <div>
+                <SkillCheckBox />
               </div>
             </Comp1>
           </Col>

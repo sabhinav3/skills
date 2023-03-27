@@ -54,10 +54,6 @@ function ManageSkillForm() {
     setInputSkills(values);
   };
 
-  // useEffect(() => {
-  //   setInputSkills(inputSkills + 1);
-  // }, []);
-
   return (
     <Container>
       <h1>Add new Skill here</h1>
@@ -66,10 +62,10 @@ function ManageSkillForm() {
         {inputSkills.map((skill) => (
           <div>
             {/* <SkillAssessmentForm skill={skill} /> */}
-            <SkillAssessmentForm skill={skill} />
             <IconButton onClick={handleRemoveSkill(skill.id)}>
               <RemoveIcon />
             </IconButton>
+            <SkillAssessmentForm skill={skill} />
           </div>
         ))}
 

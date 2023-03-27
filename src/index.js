@@ -9,12 +9,13 @@ import "@fontsource/roboto";
 import SkillForm from "./components/ManageSkillForm";
 import ServiceForm from "./components/FormEg";
 import SkillAssessmentForm from "./components/SkillAssessmentForm";
+import AddSkillsForm from "./components/AddSkillsForm";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-// root.render(<App />);
+root.render(<App />);
 // root.render(<SkillForm />);
-root.render(<SkillAssessmentForm />);
-// root.render(<ServiceForm />);
+// root.render(<SkillAssessmentForm />);
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals

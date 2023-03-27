@@ -15,37 +15,19 @@ const marks = [
 ];
 
 export const SliderValue = (props) => {
-  const sliderValue = (e) => {
-    props.onSliderValueSelect(e.target.id);
-  };
-
-  // props.onSlidersValueSelect(e.target.proficiencyValue);
-
-  const index = props.index;
-
-  const [proficiencyValue, setProficiencyValue] = useState(50);
-
   return (
     <>
       <div>
         <Box sx={{ width: 300 }}>
           <Slider
-            id="index"
+            id={props.id}
             color="#808080"
             className="slider"
-            defaultValue={50}
+            defaultValue={props.proficiency}
             aria-label="Custom marks"
             valueLabelDisplay="on"
             marks={marks}
-            onChangeCommitted={(_, v) => setProficiencyValue(v)}
-          />
-          <TextField
-            id="index"
-            className="sliderValue"
-            label="Proficiency Value"
-            value={proficiencyValue}
-            size="small"
-            readOnly
+            onChangeCommitted={(_, v) => props.onChange(v)}
           />
         </Box>
       </div>
