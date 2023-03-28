@@ -58,10 +58,7 @@ export default function SkillAssessmentForm(skill) {
                 {/* input of the skill name */}
 
                 <Col>
-                  <div
-                    key={mySkill.id}
-                    className="marginSkillAssessmentDetails"
-                  >
+                  <div className="marginSkillAssessmentDetails">
                     {mySkill.skillName}
                   </div>
 
@@ -106,7 +103,7 @@ export default function SkillAssessmentForm(skill) {
               </div>
             )}
           </form>
-          <AddSkillsForm />
+          <AddSkillsForm skillName={mySkill.skillNames} />
         </Row>
       </div>
     </Container>

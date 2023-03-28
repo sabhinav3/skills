@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "@material-ui/core/Slider";
 import Box from "@mui/material/Box";
 // import TextField from "@mui/material/TextField";
@@ -15,6 +15,7 @@ const marks = [
 ];
 
 export const SliderValue = (props) => {
+  const [proficiencyValue, setProficiencyValue] = useState(50);
   return (
     <>
       <div>
@@ -23,11 +24,13 @@ export const SliderValue = (props) => {
             id={props.id}
             color="#808080"
             className="slider"
-            defaultValue={props.proficiency}
+            // defaultValue={props.proficiency}
+            defaultValue={10}
             aria-label="Custom marks"
             valueLabelDisplay="on"
             marks={marks}
-            onChangeCommitted={(_, v) => props.onChange()}
+            // onChangeCommitted={(_, v) => props.onChange()}
+            onChangeCommitted={(_, v) => setProficiencyValue(v)}
           />
         </Box>
       </div>

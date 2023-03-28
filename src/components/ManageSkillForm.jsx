@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Container from "@mui/material/Container";
+import TextField from "@mui/material/TextField";
 import { makeStyles } from "@mui/styles";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
@@ -59,7 +60,10 @@ function ManageSkillForm() {
         <AddSkillsForm />
         {inputSkills.map((skillSet) => (
           <div>
-            <SkillAssessmentForm skill={skillSet} />
+            <SkillAssessmentForm
+              skillSet={skillSet}
+              skillName={inputSkills.skillName}
+            />
             <IconButton onClick={handleRemoveSkill(skillSet.id)}>
               <RemoveIcon />
             </IconButton>

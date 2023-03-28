@@ -5,6 +5,7 @@ import { Routes } from "react-router-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import { LevelSelect } from "./components/SkillLevelSelect";
 import { useState } from "react";
+import { SkillName } from "./components/SkillName";
 
 function App(props) {
   const defaultSkills = [
