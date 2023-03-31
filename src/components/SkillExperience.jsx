@@ -1,4 +1,7 @@
 import { useState } from "react";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { Remove } from "@material-ui/icons";
 
 function SkillExperience(props) {
   let [num, setNum] = useState(0);
@@ -34,14 +37,14 @@ function SkillExperience(props) {
               type="button"
               onClick={decNum}
             >
-              -
+              -{/* <RemoveIcon /> */}
             </button>
           </div>
           <input
             className="inputExperienceCounter"
             type="text"
             class="form-control"
-            value={num}
+            value={num + " Years"}
             onChange={handleChange}
             disabled
           />
@@ -51,7 +54,7 @@ function SkillExperience(props) {
               type="button"
               onClick={incNum}
             >
-              +
+              +{/* <AddIcon /> */}
             </button>
           </div>
         </div>

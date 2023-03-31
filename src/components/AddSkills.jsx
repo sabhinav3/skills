@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Multiselect } from "multiselect-react-dropdown";
-// import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import App from "../App";
 
 const skillsDB = [
@@ -23,10 +23,12 @@ export const AddSkills = (props) => {
             onSearch={function noRefCheck() {}}
             onSelect={function noRefCheck() {}}
             options={options}
+            background-color="#f2f2f2"
             displayValue="skills"
 
             // selectedValueDecorator={function noRefCheck() {}}
           ></Multiselect>
+          {/* <SearchRoundedIcon /> */}
           <></>
         </div>
       </div>

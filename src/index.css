@@ -341,12 +341,24 @@ code {
   margin-top: 10px;
 }
 
+.MuiSlider-root.slider.MuiSlider-marked {
+  color: #f05d23;
+}
+
 .slider {
   width: 50;
 }
 
 .sliderValue {
   margin-top: 10px;
+}
+
+.MuiSlider-rail {
+  color: orange;
+}
+
+.slider .MuiSlider-root {
+  color: #f05d23;
 }
 
 /* SkillExperience */
@@ -369,7 +381,7 @@ code {
 }
 
 .cssSearchBar {
-  background-color: #f2f2f2;
+  /* background-color: #f2f2f2; */
   border-radius: 4px;
   width: 800px;
   justify-content: center;
@@ -378,6 +390,13 @@ code {
 }
 
 .cssSearchBar .multiSelectContainer li:hover {
+  background: #f05d23;
+  color: #ffffff;
+  font-size: 14px;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.div.optionListContainer.displayBlock {
   background: #f05d23;
   color: #ffffff;
   font-size: 14px;
@@ -392,7 +411,9 @@ code {
   background: #f05d23;
   color: #ffffff;
   font-size: 14px;
+  -webkit-text-fill-color: #ffffff;
 }
+
 .cssSearchBar .closeIcon {
   color: #000000;
   cursor: pointer;
@@ -400,6 +421,14 @@ code {
   height: 13px;
   margin-left: 5px;
   width: 13px;
+}
+
+.cssSearchBar .multiselect {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.multiSelectContainer {
+  background-color: #f2f2f2;
 }
 
 /*End of Search Bar*/
@@ -456,6 +485,7 @@ code {
 .inputExperienceCounter {
   display: flex;
   width: 30px;
+  text-align: center;
 }
 
 /*Endddssss hereeee */
@@ -539,6 +569,9 @@ button {
 /*Enddsss hereeee */
 /*Form Eg : Services Form Example */
 
+/*Starts hereeee */
+/*Years of Experience*/
+
 .marginSkillAssessmentDetails {
   display: inline-flex;
   flex-direction: row;
@@ -550,3 +583,28 @@ button {
   display: inline-flex;
   flex-direction: row;
 }
+
+.SearchRoundedIcon {
+  display: inline-flex;
+  flex-direction: row;
+}
+
+.input-group .btn {
+  color: #f05d23;
+}
+
+.input-group .btn {
+  color: #f05d23;
+  background-color: #ffffff;
+  border-color: #f2f2f2;
+  border-radius: 5px;
+}
+
+.input-group .btn:hover {
+  color: #ffffff;
+  background-color: #f05d23;
+  border-color: #f05d23;
+}
+
+/*Years of Experience*/
+/*Enddsss hereeee */

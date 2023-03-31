@@ -67,9 +67,7 @@ export const TempDetails = (props) => {
 
                 <img src={verified} className="imageVerified" alt="verified" />
               </div>
-              <div>
-                <MarkExpertSkill />
-              </div>
+              <div>{/* <MarkExpertSkill /> */}</div>
             </Comp1>
           </Col>
 
