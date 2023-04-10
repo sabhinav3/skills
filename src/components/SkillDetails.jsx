@@ -24,102 +24,30 @@ const CompInside = styled.div`
   display: inline-flex;
 `;
 
-export const Details = (props) => {
+export const SkillDetails = (props) => {
   return (
     <>
-      <Comp1>
-        <div className="details">
-          <p>
-            <b>Javascript</b>
-          </p>
-          <img src={verified} className="imageVerified" alt="verified" />
-          {/* <div className="assessments">
-            <img src={frame15} className="imageAssessment" alt="profiency %" />
-            <div>
-              <b>Master</b> Level with <b>30%</b> profiency,
-              <br />
-              <p>10 Assessments</p>
-            </div>
-          </div> */}
-        </div>
-      </Comp1>
-      <Comp2>
-        <div>
-          <img src={frame15} className="imageAssessment" alt="profiency %" />
-          <CompInside>
-            <div>
-              <b>Master</b> Level with <b>30%</b> profiency,
-              <br />
-              <p>10 Assessments</p>
-            </div>
-          </CompInside>
-        </div>
-      </Comp2>
-
-      <div className="details">
-        <p>
-          <b>Frontend Development</b>
-        </p>
-        <img src={pending} className="imagePending" alt="pending" />
-        <div className="assessmentsPending">
-          <img src={frame15} className="imageAssessment" alt="profiency %" />
-          <div>
-            <b>Master</b> Level with <b>30%</b> profiency,
-            <br />
-            <p>10 Assessments</p>
-          </div>
-        </div>
-      </div>
-      <div className="details">
-        <p>
-          <b>UX Design</b>
-        </p>
-        <img src={pending} className="imagePending" alt="verified" />
-        <div className="assessmentsPending">
-          <img src={frame15} className="imageAssessment" alt="profiency %" />
-          <div>
-            <b>Master</b> Level with <b>30%</b> profiency,
-            <br />
-            <p>10 Assessments</p>
-          </div>
-        </div>
-      </div>
       <div className="detailsPending">
         <p>
-          <b>App Developer</b>
+          <b>{props.skill?.skillName}</b>
         </p>
         <img src={pending} className="imagePending" alt="verified" />
         <div className="assessmentsPending">
           <img src={frame15} className="imageAssessment" alt="profiency %" />
           <div>
-            <b>Master</b> Level with <b>30%</b> profiency,
+            <b>{props.skill?.level}</b> Level with{" "}
+            <b>{props.skill?.proficiency}</b> profiency,
             <br />
             <p>10 Assessments</p>
           </div>
         </div>
       </div>
-      <div className="checkbox">
-        <input type={"checkbox"}></input>
-        <p className="textCheckbox">Mark this field as expert</p>
-      </div>
-      <div className="detailsPending">
-        <p>
-          <b>Backend Development</b>
-        </p>
-        <img src={pending} className="imagePending" alt="verified" />
-        <div className="assessmentsPending">
-          <img src={frame15} className="imageAssessment" alt="profiency %" />
-          <div>
-            <b>Master</b> Level with <b>30%</b> profiency,
-            <br />
-            <p>10 Assessments</p>
-          </div>
+      {!props.skill?.isMarkedExpert && (
+        <div className="checkbox">
+          <input type={"checkbox"}></input>
+          <p className="textCheckbox">Mark this field as expert</p>
         </div>
-      </div>
-      <div className="checkbox">
-        <input type={"checkbox"}></input>
-        <p className="textCheckbox">Mark this field as expert</p>
-      </div>
+      )}
     </>
   );
 };
