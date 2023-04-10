@@ -4,7 +4,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import { Remove } from "@material-ui/icons";
 
 function SkillExperience(props) {
-  let [num, setNum] = useState(0);
+  let [num, setNum] = useState(props.experience);
 
   const experienceValue = (e) => {
     props.onExperienceValueSelect(e.target.id);

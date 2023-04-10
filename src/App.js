@@ -1,45 +1,20 @@
 import "./App.css";
-import { ManageSkills } from "./components/ManageSkills";
-import { TempDetails } from "./components/TempSkillsDet";
+import { ManageSkills, ManageSkillsPage } from "./components/ManageSkillsPage";
+import { MySkills, MySkillsPage } from "./components/MySkillsPage";
 import { Routes } from "react-router-dom";
 import { BrowserRouter, Route } from "react-router-dom";
 import { LevelSelect } from "./components/SkillLevelSelect";
 import { useState } from "react";
 import { SkillName } from "./components/SkillName";
+import { TempDetails } from "./components/TempSkillsDet";
 
-function App(props) {
-  const defaultSkills = [
-    {
-      id: 1,
-      skillName: "JavaScript",
-      isExpertSkill: false,
-      isMarkedExpert: false,
-      level: 2,
-      proficiency: 60,
-      experience: 1,
-    },
-    {
-      id: 2,
-      skillName: "React",
-      isExpertSkill: false,
-      isMarkedExpert: false,
-      level: 1,
-      proficiency: 70,
-      experience: 1,
-    },
-  ];
-
-  const [mySkills, setMySkills] = useState(defaultSkills);
-
+function App() {
   return (
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<TempDetails mySkills={props.mySkills} />} />
-          <Route
-            path="/manageSkills"
-            element={<ManageSkills onSkillsChange={setMySkills} />}
-          />
+          <Route path="/" element={<MySkillsPage />} />
+          <Route path="/manageSkills" element={<ManageSkillsPage />} />
         </Routes>
       </BrowserRouter>
     </div>

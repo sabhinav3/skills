@@ -1,27 +1,40 @@
 import React, { useState } from "react";
-import { Container } from "react";
-import SkillAssessmentForm from "./SkillAssessmentForm";
+import { Autocomplete } from "@material-ui/lab";
+import { TextField, Button } from "@mui/material";
 
-function AddSkillsForm(props) {
-  const countValue = 2;
-  const index = 2;
+const skillsDB = [
+  { skillName: "javascript", id: 1 },
+  { skillName: "flutter", id: 2 },
+  { skillName: "react", id: 3 },
+  { skillName: "angular", id: 4 },
+];
 
-  const [addSkills, setAddSkills] = useState(<SkillAssessmentForm />);
-  const handleAddSkills = () => console.log("print working");
-  countValue > 0 && countValue < index + 1
-    ? setAddSkills([...addSkills, <SkillAssessmentForm />])
-    : console.log("minimun skills reached");
+export const AddSkillsForm = (props) => {
+  const [options] = useState(skillsDB);
+  const [newSkills, setNewSkills] = useState([]);
 
   return (
-    <Container>
-      <div>
-        <button onClick={handleAddSkills()}></button>
+    <>
+      <div className="cssSearchBar">
+        <div>
+          <Autocomplete
+            multiple
+            id="tags-standard"
+            options={skillsDB}
+            getOptionLabel={(option) => option.skillName}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                variant="standard"
+                label="add new skills"
+                placeholder="add new skills"
+              />
+            )}
+          />
+
+          <div></div>
+        </div>
       </div>
-    </Container>
+    </>
   );
-}
-
-export default AddSkillsForm;
-
-// if id>0 && id > previous_id && id != previousId
-// id (or) index
+};
