@@ -19,7 +19,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { MarkExpertSkill } from "./MarkExpertSkill";
-import { ManageSkills } from "./ManageSkills";
+// import { ManageSkillsPage } from "./ManageSkills";
 import { Details } from "./SkillDetails";
 
 // const navigateManageSkills = () => {
