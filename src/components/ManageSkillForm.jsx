@@ -7,7 +7,8 @@ import IconButton from "@mui/material/IconButton";
 import RemoveIcon from "@mui/icons-material/RemoveCircleOutlineRounded";
 import SendIcon from "@mui/icons-material/SendRounded";
 import SkillAssessmentForm from "./SkillAssessmentForm";
-import AddSkillsForm from "./AddSkillsForm";
+import { AddSkillsForm } from "./AddSkillsForm";
+import { CompressOutlined } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,56 +19,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ManageSkillForm() {
+function ManageSkillForm(props) {
   const classes = useStyles();
-  const [inputSkills, setInputSkills] = useState([
-    {
-      id: 0,
-      skillName: "",
-      isExpertSkill: false,
-      level: "beginner",
-      proficiency: 0,
-      experience: 0,
-    },
-  ]);
+  const [inputSkills, setInputSkills] = useState(props.mySkills);
 
-  const handleChangeInput = (index, event) => {
-    console.log(index, event.target.name);
-    const values = [...inputSkills];
-    values[index][event.target.name] = event.target.value;
-    setInputSkills(values);
-  };
+  console.log(inputSkills);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("inputSkills", inputSkills);
+    console.log("inputSkills:", inputSkills);
   };
 
   const handleAddSkills = (skillSet) => {
     setInputSkills([...inputSkills, skillSet]);
   };
 
-  const handleRemoveSkill = (id) => {
-    const values = [...inputSkills];
-    values.splice(id, 1);
-    setInputSkills(values);
-  };
-
   return (
     <Container>
       <h1>Add new Skill here</h1>
-      <form onSubmit={handleSubmit} autoComplete="off">
-        <AddSkillsForm />
-        {inputSkills.map((skillSet) => (
+      <form onSubmit={handleSubmit}>
+        <AddSkillsForm handleAddSkills={handleAddSkills} />
+        {inputSkills?.map((skill) => (
           <div>
-            <SkillAssessmentForm
-              skillSet={skillSet}
-              skillName={inputSkills.skillName}
-            />
-            <IconButton onClick={handleRemoveSkill(skillSet.id)}>
-              <RemoveIcon />
-            </IconButton>
-            <SkillAssessmentForm skill={skillSet} />
+            <SkillAssessmentForm skill={skill} />
           </div>
         ))}
 
@@ -77,7 +51,7 @@ function ManageSkillForm() {
             endIcon={<SendIcon />}
             onClick={handleSubmit}
           >
-            Send
+            Save
           </Button>
         </div>
       </form>
