@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
 import ControlPointRoundedIcon from "@mui/icons-material/ControlPointRounded";
 import { Link } from "react-router-dom";
+import SkillAssessmentForm from "./SkillAssessmentForm";
 
 const Button = styled.button`
   background-color: #f05d23;
@@ -25,6 +26,10 @@ const Button = styled.button`
 `;
 
 export const AddButton = (props) => {
+  const AddSkillComponent = () => {
+    const [addSkill, setAddSkill] = useState(0);
+  };
+
   return (
     <div className="button-underline">
       <Link to="/manageSkills">
@@ -32,9 +37,9 @@ export const AddButton = (props) => {
           <ControlPointRoundedIcon />
           Add New Skills
         </Button>
+
+        {/* {Array(addSkill).fill(<SkillAssessmentForm />)} */}
       </Link>
     </div>
   );
 };
-
-// for this button., we need to add an onclick event then., we need to render new component
