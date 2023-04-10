@@ -14,8 +14,8 @@ const marks = [
   },
 ];
 
-export const SliderValue = (props) => {
-  const [proficiencyValue, setProficiencyValue] = useState(50);
+export const SkillProficiency = (props) => {
+  const [proficiencyValue, setProficiencyValue] = useState(props.proficiency);
   return (
     <>
       <div>
@@ -25,12 +25,12 @@ export const SliderValue = (props) => {
             color="#808080"
             className="slider"
             // defaultValue={props.proficiency}
-            defaultValue={10}
+            defaultValue={proficiencyValue}
             aria-label="Custom marks"
             valueLabelDisplay="on"
             marks={marks}
             // onChangeCommitted={(_, v) => props.onChange()}
-            onChangeCommitted={(_, v) => setProficiencyValue(v)}
+            // onChangeCommitted={(_, v) => setProficiencyValue(v)}
           />
         </Box>
       </div>
