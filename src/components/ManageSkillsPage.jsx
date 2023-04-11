@@ -1,18 +1,8 @@
 import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
-import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import "@fontsource/roboto";
-import question from "/Users/sabhinav/nearbuzz/skills/src/images/question.png";
-import SkillExperience from "./SkillExperience";
-import { MarkExpertSkilll } from "./MarkExpertSkill";
-import { AddButton } from "./AddNewSkillBtn";
-import { SkillName } from "./SkillName";
-import { Link, useLocation } from "react-router-dom";
-import { SliderValue } from "./SkillProficiency";
-import { SkillLevelSelect } from "./SkillLevelSelect";
+import { useLocation } from "react-router-dom";
 import ManageSkillForm from "./ManageSkillForm";
 
 export const ManageSkillsPage = (props) => {
