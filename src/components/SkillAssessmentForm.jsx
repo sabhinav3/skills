@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import { SkillProficiency, SliderValue } from "./SkillProficiency";
+import { SkillProficiency } from "./SkillProficiency";
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import SkillExperience from "./SkillExperience";

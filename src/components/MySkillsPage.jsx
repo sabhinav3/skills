@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import Container from "react-bootstrap/Container";
 import { Link, useLocation } from "react-router-dom";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
@@ -11,20 +11,20 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { SkillDetails } from "./SkillDetails";
 
-const Comp1 = styled.div`
-  margin-left: 0px;
-  display: inline-flex;
-`;
+// const Comp1 = styled.div`
+//   margin-left: 0px;
+//   display: inline-flex;
+// `;
 
-const Comp2 = styled.div`
-  //   margin-left: 440px;
-  display: inline-flex;
-`;
+// const Comp2 = styled.div`
+//   //   margin-left: 440px;
+//   display: inline-flex;
+// `;
 
-const CompInside = styled.div`
-  margin-left: 10px;
-  display: inline-flex;
-`;
+// const CompInside = styled.div`
+//   margin-left: 10px;
+//   display: inline-flex;
+// `;
 
 export const MySkillsPage = () => {
   const defaultSkills = [
