@@ -10,12 +10,12 @@ import "/Users/sabhinav/nearbuzz/skills/src/index.css";
 import verified from "../images/verified.png";
 import pending from "../images/pending.png";
 import frame15 from "../images/Frame-15.png";
-import frame25 from "../images/Frame-25.png";
-import frame26 from "../images/Frame-26.png";
-import frame27 from "../images/Frame-27.png";
-import frame28 from "../images/Frame-28.png";
-import frame29 from "../images/Frame-29.png";
-import frame30 from "../images/no_assessment.png";
+import proficient from "../images/Frame-25.png";
+import intermediate from "../images/Frame-26.png";
+import beginner from "../images/Frame-28.png";
+import master from "../images/Frame-29.png";
+import expert from "../images/Frame-24.png";
+import noSkill from "../images/no_assessment.png";
 
 const Comp1 = styled.div`
   margin-left: 0px;
@@ -54,6 +54,11 @@ export const SkillDetails = (props) => {
             <div className="mySkillProficiency">
               <p>10 Assessments</p>
             </div>
+
+            {/* The third column */}
+            <div className="selfAssessment">
+              <p>Skill Assessment</p>
+            </div>
           </div>
         </Row>
 
@@ -78,10 +83,12 @@ const levelSelectName = (props) => {
     return "Beginner";
   } else if (props.skill?.level >= 4 && props.skill.level <= 6) {
     return "Intermediate";
-  } else if (props.skill?.level >= 7 && props.skill.level <= 9) {
+  } else if (props.skill?.level >= 7 && props.skill.level <= 8) {
     return "Proficient";
-  } else if (props.skill?.level == 10) {
+  } else if (props.skill?.level == 9) {
     return "Master";
+  } else if (props.skill?.level == 10) {
+    return "Expert";
   }
 };
 
@@ -89,7 +96,7 @@ const levelSelectImage = (props) => {
   if (props.skill?.level <= 0) {
     return (
       <img
-        src={frame27}
+        src={noSkill}
         className="imageAssessment"
         alt="0 proficiency level"
       />
@@ -97,7 +104,7 @@ const levelSelectImage = (props) => {
   } else if (props.skill?.level >= 1 && props.skill.level <= 3) {
     return (
       <img
-        src={frame28}
+        src={beginner}
         className="imageAssessment"
         alt="Beginner Level Proficiency"
       />
@@ -105,23 +112,31 @@ const levelSelectImage = (props) => {
   } else if (props.skill?.level >= 4 && props.skill.level <= 6) {
     return (
       <img
-        src={frame26}
+        src={intermediate}
         className="imageAssessment"
         alt="Intermediate Level Proficiency"
       />
     );
-  } else if (props.skill?.level >= 7 && props.skill.level <= 9) {
+  } else if (props.skill?.level >= 7 && props.skill.level <= 8) {
     return (
       <img
-        src={frame25}
+        src={proficient}
         className="imageAssessment"
         alt="Proficient Level Proficiency"
+      />
+    );
+  } else if (props.skill?.level == 9) {
+    return (
+      <img
+        src={master}
+        className="imageAssessment"
+        alt="Masters Level Proficiency"
       />
     );
   } else if (props.skill?.level == 10) {
     return (
       <img
-        src={frame29}
+        src={expert}
         className="imageAssessment"
         alt="Masters Level Proficiency"
       />

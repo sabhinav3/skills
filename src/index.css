@@ -153,9 +153,15 @@ code {
 }
 
 .mySkillProficiency {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   width: 33.33%;
+}
+
+.selfAssessment {
+  display: inline-flex;
+  flex-direction: row;
+  width: 33.3%;
 }
 
 .detailsPending p {
