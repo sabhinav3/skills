@@ -44,9 +44,19 @@ export const MySkillsPage = () => {
       isExpertSkill: false,
       expertStatus: null,
       isMarkedExpert: false,
-      level: 1,
+      level: 4,
       proficiency: 70,
       experience: 1,
+    },
+    {
+      id: 3,
+      skillName: "Flutter",
+      isExpertSkill: false,
+      expertStatus: null,
+      isMarkedExpert: false,
+      level: 7,
+      proficiency: 80,
+      experience: 3,
     },
   ];
 
@@ -64,6 +74,12 @@ export const MySkillsPage = () => {
   return (
     <>
       <Container>
+        <div className="navbar">
+          <Link to="/" className="navbar">
+            <p>My Skills</p>
+          </Link>
+        </div>
+
         {mySkills.map((skill) => (
           <SkillDetails skill={skill} />
         ))}
