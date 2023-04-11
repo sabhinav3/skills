@@ -164,6 +164,22 @@ code {
   width: 33.3%;
 }
 
+.mySkillExpertCheckbox {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #000000;
+  box-sizing: border-box;
+}
+
+.mySkillExpertCheckbox p {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #000000;
+  box-sizing: border-box;
+}
+
 .detailsPending p {
   font-size: 18px;
   display: inline-flex;

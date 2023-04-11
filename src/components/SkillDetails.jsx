@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import "@fontsource/roboto";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
@@ -41,13 +40,15 @@ export const SkillDetails = (props) => {
           <div className="mySkillsPage">
             <div className="mySkillName">
               <b>{props.skill?.skillName}</b>
+              <div className="mySkillExpertCheckbox"></div>
+              <p> my skill name</p>
             </div>
 
             {/* </Col> */}
             <div className="mySkillLevelImage">
               {levelSelectImage(props)}
               {/* <b>{props.skill?.level}</b> Level with */}
-              <b>{levelSelectName(props)}</b>Level with
+              <b>{levelSelectName(props)}</b> Level with
               <b>{props.skill?.proficiency}</b>% Profiency,
             </div>
             <br />
