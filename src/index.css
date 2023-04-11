@@ -88,10 +88,19 @@ code {
 
 .imageAssessment {
   display: inline-flex;
+  flex-direction: row;
   height: 45px;
   width: 45px;
   margin-right: 8px;
   margin-left: 0cm;
+}
+
+.imageAssessmentPending {
+  display: inline-flex;
+  flex-direction: row;
+  height: 45px;
+  width: 45px;
+  margin-right: 8px;
 }
 
 .imageEdit {
@@ -104,43 +113,74 @@ code {
   border-radius: 4px;
 }
 
-.imageAssessmentPending {
-  height: 45px;
-  width: 45px;
-  margin-right: 8px;
-}
-
 .checkbox {
   margin-left: 200px;
-  flex-direction: row;
   display: inline-flex;
+  flex-direction: row;
   margin-top: 8px;
+}
+
+.mySkillsPage {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mySkillName {
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 18px;
+  width: 33.33%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.mySkillName b {
+  display: inline-flex;
+  flex-direction: row;
+  font-size: 18px;
+  width: 33.33%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.mySkillLevelImage {
+  display: inline-flex;
+  flex-direction: row;
+  width: 33.33%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.mySkillProficiency {
+  display: flex;
+  flex-direction: row;
+  width: 33.33%;
 }
 
 .detailsPending p {
   font-size: 18px;
   display: inline-flex;
+  flex-direction: row;
   font-family: sans-serif;
   margin-right: 5px;
   margin-top: 10px;
   margin-bottom: 0px;
   margin-left: 80px;
-  flex-direction: row;
   justify-content: space-between;
   color: #000000;
   box-sizing: border-box;
 }
 
 .checkbox p {
+  display: inline-flex;
   font-size: 10px;
   font-family: sans-serif;
   margin-right: 5px;
   margin-top: 0px;
-  display: inline-flex;
   margin-bottom: 20px;
   margin-left: 10px;
   flex-direction: row;
-  display: inline-flex;
 }
 
 .textCheckbox {
