@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "@fontsource/roboto";
 import "/Users/sabhinav/nearbuzz/skills/src/index.css";
 import verified from "../images/verified.png";
@@ -77,7 +77,20 @@ export const SkillDetails = (props) => {
 
             {/* The third column */}
             <div className="selfAssessment">
-              <p>Skill Assessment</p>
+              <div>
+                Skill Assessment &nbsp;
+                <Link to="/manageSkills">
+                  <ModeEditOutlineTwoToneIcon style={{ fontSize: 18 }} />
+                </Link>
+              </div>
+              <div className="mySkillEditAssessment">
+                <p>
+                  <br />
+                  {props.skill?.experience} Years, {levelSelectName(props)}
+                  &nbsp;Level with {props.skill?.proficiency} %
+                  &nbsp;Proficiency
+                </p>
+              </div>
             </div>
           </div>
         </Row>
@@ -91,7 +104,7 @@ const levelSelectName = (props) => {
   // return console.log(props.skill?.level);
 
   if (props.skill?.level <= 0) {
-    return "No Skills";
+    return "Novice";
   } else if (props.skill?.level >= 1 && props.skill.level <= 3) {
     return "Beginner";
   } else if (props.skill?.level >= 4 && props.skill.level <= 6) {

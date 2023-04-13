@@ -154,7 +154,6 @@ code {
   display: inline-flex;
   flex-direction: row;
   font-size: 18px;
-  width: 33.33%;
   justify-content: space-between;
   box-sizing: border-box;
 }
@@ -192,9 +191,21 @@ code {
 }
 
 .selfAssessment {
-  display: inline-flex;
+  display: inline-block;
   flex-direction: row;
-  width: 33.3%;
+  width: 33.33%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-right: 10px;
+  text-align: justify;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.selfAssessment::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
 }
 
 .mySkillExpertCheckbox {
@@ -224,6 +235,38 @@ code {
   content: "";
   display: inline-block;
   width: 100%;
+}
+
+.mySkillEditAssessment {
+  font-size: 10px;
+  display: flex;
+  text-align: left;
+  flex-direction: row;
+  width: 33.33%;
+  justify-content: space-between;
+  /* margin-left: 10px; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-top: 10px;
+  justify-content: left;
+  color: #000000;
+  text-align: left;
+}
+
+.mySkillEditAssessment p {
+  display: flex;
+  text-align: left;
+  /* flex-direction: row; */
+  width: 33.33%;
+  justify-content: space-between;
+  /* margin-left: 10px; */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  margin-top: 0px;
+  justify-content: left;
+  color: #000000;
+  text-align: left;
 }
 
 .detailsPending p {
