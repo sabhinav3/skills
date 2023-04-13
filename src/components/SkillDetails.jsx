@@ -15,6 +15,7 @@ import beginner from "../images/Frame-28.png";
 import master from "../images/Frame-29.png";
 import expert from "../images/Frame-24.png";
 import noSkill from "../images/no_assessment.png";
+import ModeEditOutlineTwoToneIcon from "@mui/icons-material/ModeEditOutlineTwoTone";
 
 const Comp1 = styled.div`
   margin-left: 0px;
@@ -36,25 +37,43 @@ export const SkillDetails = (props) => {
     <>
       <Container>
         <Row>
-          {/* <Col> */}
           <div className="mySkillsPage">
-            <div className="mySkillName">
-              <b>{props.skill?.skillName}</b>
-              <div className="mySkillExpertCheckbox"></div>
-              <p> my skill name</p>
-            </div>
+            <Col>
+              <div className="mySkillsColumn">
+                <div className="mySkillName">
+                  <p>
+                    <b>{props.skill?.skillName}</b>
+                  </p>
+                </div>
+                <div className="mySkillExpertCheckbox">
+                  <p>
+                    <br />
+                    {!props.skill?.isMarkedExpert && (
+                      <div className="checkbox">
+                        <input type={"checkbox"}></input>
+                        <p className="textCheckbox">
+                          Mark this field as expert
+                        </p>
+                      </div>
+                    )}
+                  </p>
+                </div>
+              </div>
+            </Col>
 
-            {/* </Col> */}
-            <div className="mySkillLevelImage">
-              {levelSelectImage(props)}
-              {/* <b>{props.skill?.level}</b> Level with */}
-              <b>{levelSelectName(props)}</b> Level with
-              <b>{props.skill?.proficiency}</b>% Profiency,
-            </div>
-            <br />
-            <div className="mySkillProficiency">
-              <p>10 Assessments</p>
-            </div>
+            <Col>
+              <div className="mySkillLevelDetails">
+                <div className="mySkillLevelImage">
+                  {levelSelectImage(props)}
+                  <b>{levelSelectName(props)}</b>&nbsp; Level with&nbsp;
+                  <b>{props.skill?.proficiency} %</b>&nbsp;Proficiency
+                </div>
+
+                <div className="mySkillProficiency">
+                  <p>{props.skill?.level} Assessments</p>
+                </div>
+              </div>
+            </Col>
 
             {/* The third column */}
             <div className="selfAssessment">
@@ -62,13 +81,6 @@ export const SkillDetails = (props) => {
             </div>
           </div>
         </Row>
-
-        {!props.skill?.isMarkedExpert && (
-          <div className="checkbox">
-            <input type={"checkbox"}></input>
-            <p className="textCheckbox">Mark this field as expert</p>
-          </div>
-        )}
       </Container>
     </>
   );
